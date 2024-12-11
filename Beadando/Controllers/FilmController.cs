@@ -128,6 +128,25 @@ namespace Beadando.Controllers
                 return StatusCode(500, "Szerver hiba történt.");
             }
         }
+        [HttpGet("search")]
+        public IActionResult SearchFilms([FromQuery] string title)
+        {
+            if (string.IsNullOrWhiteSpace(title))
+            {
+                return BadRequest("A keresési cím nem lehet üres.");
+            }
 
+            var films = _context.Films
+             .AsEnumerable() // Ezzel átkapcsolunk kliensoldali értékelésre
+             .Where(f => f.Title.Contains(title, StringComparison.OrdinalIgnoreCase))
+             .ToList(); 
+
+            if (films == null || films.Count == 0)
+            {
+                return NotFound("Nem található film a megadott címmel.");
+            }
+
+            return Ok(films);
+        }
     }
 }

@@ -1,15 +1,21 @@
 ﻿@{
-    ViewData["Title"] = "Filmek ";
+    ViewData["Title"] = "Filmek";
 }
 
 <div class="container">
     <h1>@ViewData["Title"]</h1>
 
+    
+    <div>
+        <input type="text" id="search-input" placeholder="Keresés film cím alapján..." class="form-control" />
+    </div>
+
+   
     <div id="film-list">
         <p>Betöltés...</p>
     </div>
 
-    <!-- Film hozzáadása form -->
+   
     <button onclick="openFilm()">Film hozzáadása</button>
 
     <div id="add-film" style="display:none;">

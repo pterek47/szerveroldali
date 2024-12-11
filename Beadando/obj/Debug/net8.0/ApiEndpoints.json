@@ -59,6 +59,22 @@
   },
   {
     "ContainingType": "Beadando.Controllers.FilmsController",
+    "Method": "SearchFilms",
+    "RelativePath": "api/Films/search",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "title",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Beadando.Controllers.FilmsController",
     "Method": "UpdateFilmById",
     "RelativePath": "api/Films/update-film/{id}",
     "HttpMethod": "PATCH",

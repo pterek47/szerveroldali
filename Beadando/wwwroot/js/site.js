@@ -1,92 +1,112 @@
-﻿//hivas
-fetch('api/films/films') 
-    .then(response => response.json())
-    .then(data => {
-        const filmList = document.getElementById('film-list');
-        filmList.innerHTML = '';
-        data.forEach(film => {
-            const filmItem = document.createElement('div');
-            filmItem.className = 'film-item';
-            filmItem.innerHTML = `
-                <h2>${film.title}</h2>
-                <p><strong>Rendező:</strong> ${film.director}</p>
-                <p><strong>Kiadás éve:</strong> ${film.releaseYear}</p>
-                <button onclick="deleteFilm(${film.id})">Törlés</button>
-                <button onclick="updateFilm(${film.id})">Módosítás</button>
-            `;
-            filmList.appendChild(filmItem);
+﻿// Filmek betoltese
+function loadAllFilms() {
+    fetch('api/films/films')
+        .then(response => response.json())
+        .then(data => displayFilms(data))
+        .catch(error => {
+            document.getElementById('film-list').innerHTML = '<p>Hiba történt a filmek betöltése során.</p>';
+            console.error(error);
         });
-    })
-    .catch(error => {
-        document.getElementById('film-list').innerHTML = '<p>Hiba történt a filmek betöltése során.</p>';
-        console.error(error);
+}
+
+// film kereses
+document.getElementById('search-input')?.addEventListener('input', function () {
+    const query = this.value.trim(); // szoveg
+
+    if (!query) {
+        loadAllFilms(); // ha nem keres semmire akkor minden film kilistazva
+        return;
+    }
+
+    fetch(`api/films/search?title=${encodeURIComponent(query)}`)
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error('Hiba a keresés során.');
+            }
+        })
+        .then(data => displayFilms(data))
+        .catch(error => console.error(error.message));
+});
+
+// Filmek megjelenitese
+function displayFilms(films) {
+    const filmList = document.getElementById('film-list');
+    filmList.innerHTML = '';
+
+    films.forEach(film => {
+        const filmItem = document.createElement('div');
+        filmItem.className = 'film-item';
+        filmItem.innerHTML = `
+            <h2>${film.title}</h2>
+            <p><strong>Rendező:</strong> ${film.director}</p>
+            <p><strong>Kiadás éve:</strong> ${film.releaseYear}</p>
+            <button onclick="deleteFilm(${film.id})">Törlés</button>
+            <button onclick="updateFilm(${film.id})">Módosítás</button>
+        `;
+        filmList.appendChild(filmItem);
     });
+}
 
-
-let isSubmitting =
-
+// Film hozzaadasa
+let isSubmitting = false;
 document.getElementById('add-film-form')?.addEventListener('submit', function (e) {
     e.preventDefault();
 
-   
     if (isSubmitting) {
         return;
     }
 
     isSubmitting = true;
 
-    
     const title = document.getElementById('title').value;
     const director = document.getElementById('director').value;
-    const releaseYear = parseInt(document.getElementById('releaseYear').value, 10); // biztos szam legyen
+    const releaseYear = parseInt(document.getElementById('releaseYear').value, 10);
 
-    // ellenorzes
     if (!title || !director || !releaseYear) {
         alert('Kérlek, töltsd ki az összes mezőt!');
-        isSubmitting = false; 
+        isSubmitting = false;
         return;
     }
 
-    //post
-    fetch('api/films/add-film', {  
+    fetch('api/films/add-film', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ title, director, releaseYear })
+        body: JSON.stringify({ title, director, releaseYear }),
     })
         .then(response => response.json())
-        .then(data => {
+        .then(() => {
             alert('Film hozzáadva');
-            location.reload(); 
-            isSubmitting = false; 
+            loadAllFilms();
+            isSubmitting = false;
         })
         .catch(error => {
             console.error(error);
             alert('Hiba történt a film hozzáadása során.');
-            isSubmitting = false; 
+            isSubmitting = false;
         });
 });
 
-
 // Film torlese
 function deleteFilm(id) {
-    fetch(`api/films/delete-film/${id}`, { 
+    fetch(`api/films/delete-film/${id}`, {
         method: 'DELETE',
     })
-        .then(response => {
+        .then(() => {
             alert('Film törölve');
-            location.reload(); 
+            loadAllFilms();
         })
         .catch(error => console.error(error));
 }
 
-//film modostisasa
-
+// Film modositasa
 function updateFilm(id) {
-    const title = prompt('Új cím :');
-    const director = prompt('Új rendező :');
-    const releaseYear = prompt('Új kiadási év :');
+    const title = prompt('Új cím:');
+    const director = prompt('Új rendező:');
+    const releaseYear = prompt('Új kiadási év:');
 
     const updatedFilm = {
         title: title || null,
@@ -104,7 +124,7 @@ function updateFilm(id) {
         .then(response => {
             if (response.ok) {
                 alert('Film frissítve');
-                location.reload();
+                loadAllFilms();
             } else {
                 alert('Hiba történt a film frissítésekor');
             }
@@ -112,13 +132,17 @@ function updateFilm(id) {
         .catch(error => console.error(error));
 }
 
-
-//  megnyitas
+// filmek hozzadasa
 function openFilm() {
     document.getElementById('add-film').style.display = 'block';
+    document.getElementById('title').value = '';
+    document.getElementById('director').value = '';
+    document.getElementById('releaseYear').value = '';
 }
-
-//  zaras
+//filmek bezarasa
 function closeFilm() {
     document.getElementById('add-film').style.display = 'none';
 }
+
+// jelenjen meg alapbol mindegyik
+loadAllFilms();
