@@ -1,0 +1,81 @@
+[
+  {
+    "ContainingType": "Beadando.Controllers.FilmsController",
+    "Method": "AddFilm",
+    "RelativePath": "api/Films/add-film",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "newFilm",
+        "Type": "Beadando.Models.FilmApi.Models.Film",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Beadando.Controllers.FilmsController",
+    "Method": "DeleteFilmById",
+    "RelativePath": "api/Films/delete-film/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Beadando.Controllers.FilmsController",
+    "Method": "GetAllFilms",
+    "RelativePath": "api/Films/films",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Beadando.Controllers.FilmsController",
+    "Method": "GetFilmById",
+    "RelativePath": "api/Films/films/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Beadando.Controllers.FilmsController",
+    "Method": "UpdateReleaseYearById",
+    "RelativePath": "api/Films/update-release-year/{id}",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "releaseYear",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

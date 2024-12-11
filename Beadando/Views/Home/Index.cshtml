@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "Filmek ";
+}
+
+<div class="container">
+    <h1>@ViewData["Title"]</h1>
+
+    <div id="film-list">
+        <p>Betöltés...</p>
+    </div>
+
+    <!-- Film hozzáadása form -->
+    <button onclick="openModal()">Film hozzáadása</button>
+
+    <div id="add-film-modal" style="display:none;">
+        <h3>Film hozzáadása</h3>
+        <form id="add-film-form">
+            <label for="title">Cím:</label>
+            <input type="text" id="title" required />
+            <label for="director">Rendező:</label>
+            <input type="text" id="director" required />
+            <label for="releaseYear">Kiadás éve:</label>
+            <input type="number" id="releaseYear" required />
+            <button type="submit">Hozzáadás</button>
+        </form>
+        <button onclick="closeModal()">Bezárás</button>
+    </div>
+</div>
+
+<link rel="stylesheet" href="css/site.css">
+
+@section Scripts {
+    <script src="js/site.js"></script>
+}
