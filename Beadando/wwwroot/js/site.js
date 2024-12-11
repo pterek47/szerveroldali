@@ -50,7 +50,7 @@ function displayFilms(films) {
 }
 
 // Film hozzaadasa
-
+let isSubmitting;
 document.getElementById('add-film-form')?.addEventListener('submit', function (e) {
     e.preventDefault();
 

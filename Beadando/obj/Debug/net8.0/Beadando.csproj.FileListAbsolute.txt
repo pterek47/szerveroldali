@@ -219,3 +219,5 @@ W:\progi\szerveroldali\Beadando\obj\Debug\net8.0\refint\Beadando.dll
 W:\progi\szerveroldali\Beadando\obj\Debug\net8.0\Beadando.pdb
 W:\progi\szerveroldali\Beadando\obj\Debug\net8.0\Beadando.genruntimeconfig.cache
 W:\progi\szerveroldali\Beadando\obj\Debug\net8.0\ref\Beadando.dll
+W:\progi\szerveroldali\Beadando\bin\Debug\net8.0\package-lock.json
+W:\progi\szerveroldali\Beadando\bin\Debug\net8.0\package.json

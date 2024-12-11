@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmek</title>
+    <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Filmek</h1>
+
+        <div>
+            <input type="text" id="search-input" placeholder="Keresés film cím alapján..." class="form-control" />
+        </div>
+
+        <div id="film-list">
+            <p>Betöltés...</p>
+        </div>
+
+        <button onclick="openFilm()">Film hozzáadása</button>
+
+        <div id="add-film" style="display:none;">
+            <h3>Film hozzáadása</h3>
+            <form id="add-film-form">
+                <label for="title">Cím:</label>
+                <input type="text" id="title" required />
+                <label for="director">Rendező:</label>
+                <input type="text" id="director" required />
+                <label for="releaseYear">Kiadás éve:</label>
+                <input type="number" id="releaseYear" required />
+                <button type="submit">Hozzáadás</button>
+            </form>
+            <button onclick="closeFilm()">Bezárás</button>
+        </div>
+    </div>
+
+    <script src="js/site.js"></script>
+</body>
+</html>
