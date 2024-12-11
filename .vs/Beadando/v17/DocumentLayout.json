@@ -3,32 +3,32 @@
   "WorkspaceRootPath": "W:\\progi\\szerveroldali\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{F8705544-B79B-470B-8A22-E3417DA9B5FB}|Beadando\\Beadando.csproj|w:\\progi\\szerveroldali\\beadando\\controllers\\filmcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F8705544-B79B-470B-8A22-E3417DA9B5FB}|Beadando\\Beadando.csproj|solutionrelative:beadando\\controllers\\filmcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F8705544-B79B-470B-8A22-E3417DA9B5FB}|Beadando\\Beadando.csproj|w:\\progi\\szerveroldali\\beadando\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{F8705544-B79B-470B-8A22-E3417DA9B5FB}|Beadando\\Beadando.csproj|solutionrelative:beadando\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F8705544-B79B-470B-8A22-E3417DA9B5FB}|Beadando\\Beadando.csproj|w:\\progi\\szerveroldali\\beadando\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{F8705544-B79B-470B-8A22-E3417DA9B5FB}|Beadando\\Beadando.csproj|solutionrelative:beadando\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{F8705544-B79B-470B-8A22-E3417DA9B5FB}|Beadando\\Beadando.csproj|w:\\progi\\szerveroldali\\beadando\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F8705544-B79B-470B-8A22-E3417DA9B5FB}|Beadando\\Beadando.csproj|solutionrelative:beadando\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F8705544-B79B-470B-8A22-E3417DA9B5FB}|Beadando\\Beadando.csproj|w:\\progi\\szerveroldali\\beadando\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{F8705544-B79B-470B-8A22-E3417DA9B5FB}|Beadando\\Beadando.csproj|solutionrelative:beadando\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{F8705544-B79B-470B-8A22-E3417DA9B5FB}|Beadando\\Beadando.csproj|w:\\progi\\szerveroldali\\beadando\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{F8705544-B79B-470B-8A22-E3417DA9B5FB}|Beadando\\Beadando.csproj|solutionrelative:beadando\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F8705544-B79B-470B-8A22-E3417DA9B5FB}|Beadando\\Beadando.csproj|w:\\progi\\szerveroldali\\beadando\\database.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
       "RelativeMoniker": "D:0:0:{F8705544-B79B-470B-8A22-E3417DA9B5FB}|Beadando\\Beadando.csproj|solutionrelative:beadando\\database.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F8705544-B79B-470B-8A22-E3417DA9B5FB}|Beadando\\Beadando.csproj|w:\\progi\\szerveroldali\\beadando\\controllers\\filmcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F8705544-B79B-470B-8A22-E3417DA9B5FB}|Beadando\\Beadando.csproj|solutionrelative:beadando\\controllers\\filmcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F8705544-B79B-470B-8A22-E3417DA9B5FB}|Beadando\\Beadando.csproj|w:\\progi\\szerveroldali\\beadando\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F8705544-B79B-470B-8A22-E3417DA9B5FB}|Beadando\\Beadando.csproj|solutionrelative:beadando\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F8705544-B79B-470B-8A22-E3417DA9B5FB}|Beadando\\Beadando.csproj|w:\\progi\\szerveroldali\\beadando\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F8705544-B79B-470B-8A22-E3417DA9B5FB}|Beadando\\Beadando.csproj|solutionrelative:beadando\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F8705544-B79B-470B-8A22-E3417DA9B5FB}|Beadando\\Beadando.csproj|w:\\progi\\szerveroldali\\beadando\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -54,7 +54,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -88,20 +88,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "site.js",
               "DocumentMoniker": "W:\\progi\\szerveroldali\\Beadando\\wwwroot\\js\\site.js",
               "RelativeDocumentMoniker": "Beadando\\wwwroot\\js\\site.js",
               "ToolTip": "W:\\progi\\szerveroldali\\Beadando\\wwwroot\\js\\site.js",
               "RelativeToolTip": "Beadando\\wwwroot\\js\\site.js",
-              "ViewState": "AgIAADUAAAAAAAAAAAA5wCIAAAAxAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGwAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2024-12-10T11:56:02.145Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
               "Title": "HomeController.cs",
               "DocumentMoniker": "W:\\progi\\szerveroldali\\Beadando\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Beadando\\Controllers\\HomeController.cs",
@@ -114,33 +114,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Index.cshtml",
               "DocumentMoniker": "W:\\progi\\szerveroldali\\Beadando\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Beadando\\Views\\Home\\Index.cshtml",
               "ToolTip": "W:\\progi\\szerveroldali\\Beadando\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "Beadando\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-12-10T11:14:14.106Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Program.cs",
               "DocumentMoniker": "W:\\progi\\szerveroldali\\Beadando\\Program.cs",
               "RelativeDocumentMoniker": "Beadando\\Program.cs",
               "ToolTip": "W:\\progi\\szerveroldali\\Beadando\\Program.cs",
               "RelativeToolTip": "Beadando\\Program.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACEAAAAAAAAAAIBJwAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-06T14:29:18.801Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "site.css",
               "DocumentMoniker": "W:\\progi\\szerveroldali\\Beadando\\wwwroot\\css\\site.css",
               "RelativeDocumentMoniker": "Beadando\\wwwroot\\css\\site.css",
@@ -166,7 +166,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "database.sql ",
               "DocumentMoniker": "W:\\progi\\szerveroldali\\Beadando\\database.sql",
               "RelativeDocumentMoniker": "Beadando\\database.sql",
@@ -178,13 +178,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "FilmController.cs",
               "DocumentMoniker": "W:\\progi\\szerveroldali\\Beadando\\Controllers\\FilmController.cs",
               "RelativeDocumentMoniker": "Beadando\\Controllers\\FilmController.cs",
               "ToolTip": "W:\\progi\\szerveroldali\\Beadando\\Controllers\\FilmController.cs",
               "RelativeToolTip": "Beadando\\Controllers\\FilmController.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAgwI4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACAAAAAAAAAAAADwv2IAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-06T14:11:35.871Z",
               "EditorCaption": ""

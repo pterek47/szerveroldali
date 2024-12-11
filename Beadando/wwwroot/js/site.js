@@ -50,7 +50,7 @@ function displayFilms(films) {
 }
 
 // Film hozzaadasa
-let isSubmitting = false;
+
 document.getElementById('add-film-form')?.addEventListener('submit', function (e) {
     e.preventDefault();
 
@@ -104,32 +104,36 @@ function deleteFilm(id) {
 
 // Film modositasa
 function updateFilm(id) {
-    const title = prompt('Új cím:');
-    const director = prompt('Új rendező:');
-    const releaseYear = prompt('Új kiadási év:');
+    fetch(`api/films/films/${id}`)
+        .then(response => response.json())
+        .then(film => {
+            const title = prompt('Új cím:', film.title);
+            const director = prompt('Új rendező:', film.director);
+            const releaseYear = prompt('Új kiadási év:', film.releaseYear);
 
-    const updatedFilm = {
-        title: title || null,
-        director: director || null,
-        releaseYear: releaseYear ? parseInt(releaseYear, 10) : 0,
-    };
+            const updatedFilm = {
+                title: title,
+                director: director,
+                releaseYear: releaseYear ? parseInt(releaseYear, 10) : 0,
+            };
 
-    fetch(`api/films/update-film/${id}`, {
-        method: 'PATCH',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(updatedFilm),
-    })
-        .then(response => {
-            if (response.ok) {
-                alert('Film frissítve');
-                loadAllFilms();
-            } else {
-                alert('Hiba történt a film frissítésekor');
-            }
-        })
-        .catch(error => console.error(error));
+            fetch(`api/films/update-film/${id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(updatedFilm),
+            })
+                .then(response => {
+                    if (response.ok) {
+                        alert('Film frissítve');
+                        loadAllFilms();
+                    } else {
+                        alert('Hiba történt a film frissítésekor');
+                    }
+                })
+                .catch(error => console.error(error));
+        });
 }
 
 // filmek hozzadasa

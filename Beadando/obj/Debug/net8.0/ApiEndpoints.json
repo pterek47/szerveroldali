@@ -77,7 +77,7 @@
     "ContainingType": "Beadando.Controllers.FilmsController",
     "Method": "UpdateFilmById",
     "RelativePath": "api/Films/update-film/{id}",
-    "HttpMethod": "PATCH",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [

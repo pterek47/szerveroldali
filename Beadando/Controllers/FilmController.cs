@@ -90,7 +90,7 @@ namespace Beadando.Controllers
             return NoContent();
         }
 
-        [HttpPatch("update-film/{id}")]
+        [HttpPut("update-film/{id}")]
         public async Task<IActionResult> UpdateFilmById(int id, [FromBody] Film updatedFilm)
         {
             if (updatedFilm == null)
@@ -108,7 +108,7 @@ namespace Beadando.Controllers
                 }
 
                 // adatok frissitese
-                film.Title = updatedFilm.Title ?? film.Title; 
+                film.Title = updatedFilm.Title ?? film.Title;
                 film.Director = updatedFilm.Director ?? film.Director;
                 film.ReleaseYear = updatedFilm.ReleaseYear > 0 ? updatedFilm.ReleaseYear : film.ReleaseYear; // ertelmes adatot ad e meg
 
@@ -131,21 +131,12 @@ namespace Beadando.Controllers
         [HttpGet("search")]
         public IActionResult SearchFilms([FromQuery] string title)
         {
-            if (string.IsNullOrWhiteSpace(title))
-            {
-                return BadRequest("A keresési cím nem lehet üres.");
-            }
-
+            
             var films = _context.Films
-             .AsEnumerable() // Ezzel átkapcsolunk kliensoldali értékelésre
+             .AsEnumerable() 
              .Where(f => f.Title.Contains(title, StringComparison.OrdinalIgnoreCase))
              .ToList(); 
-
-            if (films == null || films.Count == 0)
-            {
-                return NotFound("Nem található film a megadott címmel.");
-            }
-
+         
             return Ok(films);
         }
     }
