@@ -8,18 +8,18 @@ using Beadando.Contexts;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+
 builder.Services.AddControllersWithViews();
 
-// Configure Entity Framework Core
+// mysql
 builder.Services.AddDbContext<GyakbeaContext>(options =>
     options.UseMySql(builder.Configuration["ConnectionString:DbConnection"],
         new MySqlServerVersion(new Version(8, 0, 25))));
 
-// Add Swagger services for API documentation
-builder.Services.AddSwaggerGen(); // Swagger regisztrálása
 
-// Add CORS policy
+builder.Services.AddSwaggerGen(); // Swagger 
+
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigin", builder =>
@@ -32,12 +32,12 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// swaggerek
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
-    app.UseSwagger(); // Swagger middleware engedélyezése
-    app.UseSwaggerUI(); // Swagger UI engedélyezése
+    app.UseSwagger(); 
+    app.UseSwaggerUI(); 
 }
 else
 {
@@ -57,6 +57,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}"); // Alapértelmezett route konfigurálása
+    pattern: "{controller=Home}/{action=Index}/{id?}"); // alapertelmezett
 
 app.Run();

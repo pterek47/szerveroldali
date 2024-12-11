@@ -59,8 +59,8 @@
   },
   {
     "ContainingType": "Beadando.Controllers.FilmsController",
-    "Method": "UpdateReleaseYearById",
-    "RelativePath": "api/Films/update-release-year/{id}",
+    "Method": "UpdateFilmById",
+    "RelativePath": "api/Films/update-film/{id}",
     "HttpMethod": "PATCH",
     "IsController": true,
     "Order": 0,
@@ -71,8 +71,8 @@
         "IsRequired": true
       },
       {
-        "Name": "releaseYear",
-        "Type": "System.Int32",
+        "Name": "updatedFilm",
+        "Type": "Beadando.Models.FilmApi.Models.Film",
         "IsRequired": true
       }
     ],

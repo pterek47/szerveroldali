@@ -1,5 +1,5 @@
-﻿// API hívás a filmek lekérdezéséhez
-fetch('api/films/films') // Módosítva: A helyes URL-t használjuk
+﻿//hivas
+fetch('api/films/films') 
     .then(response => response.json())
     .then(data => {
         const filmList = document.getElementById('film-list');
@@ -12,7 +12,7 @@ fetch('api/films/films') // Módosítva: A helyes URL-t használjuk
                 <p><strong>Rendező:</strong> ${film.director}</p>
                 <p><strong>Kiadás éve:</strong> ${film.releaseYear}</p>
                 <button onclick="deleteFilm(${film.id})">Törlés</button>
-                <button onclick="updateFilm(${film.id})">Frissítés</button>
+                <button onclick="updateFilm(${film.id})">Módosítás</button>
             `;
             filmList.appendChild(filmItem);
         });
@@ -22,33 +22,33 @@ fetch('api/films/films') // Módosítva: A helyes URL-t használjuk
         console.error(error);
     });
 
-// Film hozzáadása
+
 let isSubmitting =
 
 document.getElementById('add-film-form')?.addEventListener('submit', function (e) {
     e.preventDefault();
 
-    // Ha már folyamatban van a film hozzáadása, ne küldjük el újra a formot
+   
     if (isSubmitting) {
         return;
     }
 
     isSubmitting = true;
 
-    // 1. Film adatainak kinyerése a form-ból
+    
     const title = document.getElementById('title').value;
     const director = document.getElementById('director').value;
-    const releaseYear = parseInt(document.getElementById('releaseYear').value, 10); // Konvertáljuk számra
+    const releaseYear = parseInt(document.getElementById('releaseYear').value, 10); // biztos szam legyen
 
-    // Ellenőrzés
+    // ellenorzes
     if (!title || !director || !releaseYear) {
         alert('Kérlek, töltsd ki az összes mezőt!');
-        isSubmitting = false; // Ha nem sikerült, állítsuk vissza
+        isSubmitting = false; 
         return;
     }
 
-    // 2. API hívás
-    fetch('api/films/add-film', {  // Módosítva: A helyes URL-t használjuk
+    //post
+    fetch('api/films/add-film', {  
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -58,60 +58,67 @@ document.getElementById('add-film-form')?.addEventListener('submit', function (e
         .then(response => response.json())
         .then(data => {
             alert('Film hozzáadva');
-            location.reload(); // Frissíti az oldalt a filmek új betöltésével
-            isSubmitting = false; // Újra engedélyezzük a form beküldését
+            location.reload(); 
+            isSubmitting = false; 
         })
         .catch(error => {
             console.error(error);
             alert('Hiba történt a film hozzáadása során.');
-            isSubmitting = false; // Hiba esetén is visszaállítjuk a flag-et
+            isSubmitting = false; 
         });
 });
 
 
-// Film törlése
+// Film torlese
 function deleteFilm(id) {
-    fetch(`api/films/delete-film/${id}`, { // Módosítva: A helyes URL-t használjuk
+    fetch(`api/films/delete-film/${id}`, { 
         method: 'DELETE',
     })
         .then(response => {
             alert('Film törölve');
-            location.reload(); // Frissíti az oldalt a filmek új betöltésével
+            location.reload(); 
         })
         .catch(error => console.error(error));
 }
 
-// Film frissítése
-// Film frissítése
+//film modostisasa
+
 function updateFilm(id) {
-    const newReleaseYear = prompt('Új kiadási év:');
-    if (newReleaseYear) {
-        fetch(`api/films/update-release-year/${id}`, {
-            method: 'PATCH',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(newReleaseYear) // Csak a releaseYear-t küldjük el, nem egy objektumot
+    const title = prompt('Új cím :');
+    const director = prompt('Új rendező :');
+    const releaseYear = prompt('Új kiadási év :');
+
+    const updatedFilm = {
+        title: title || null,
+        director: director || null,
+        releaseYear: releaseYear ? parseInt(releaseYear, 10) : 0,
+    };
+
+    fetch(`api/films/update-film/${id}`, {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(updatedFilm),
+    })
+        .then(response => {
+            if (response.ok) {
+                alert('Film frissítve');
+                location.reload();
+            } else {
+                alert('Hiba történt a film frissítésekor');
+            }
         })
-            .then(response => {
-                if (response.ok) {
-                    alert('Film frissítve');
-                    location.reload(); // Frissíti az oldalt a filmek új betöltésével
-                } else {
-                    alert('Hiba történt a film frissítésekor');
-                }
-            })
-            .catch(error => console.error(error));
-    }
+        .catch(error => console.error(error));
 }
 
 
-// Modal megnyitása
-function openModal() {
-    document.getElementById('add-film-modal').style.display = 'block';
+//  megnyitas
+function openFilm() {
+    document.getElementById('add-film').style.display = 'block';
 }
 
-// Modal bezárása
-function closeModal() {
-    document.getElementById('add-film-modal').style.display = 'none';
+//  zaras
+function closeFilm() {
+    document.getElementById('add-film').style.display = 'none';
 }

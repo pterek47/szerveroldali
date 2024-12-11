@@ -57,11 +57,11 @@ namespace Beadando.Controllers
                 return BadRequest("Film is null.");
             }
 
-            // Ellenőrzés, hogy létezik-e már a film
-            var existingFilm = await _context.Films
+            // van e ilyen film
+            var vanemarilyen = await _context.Films
                 .FirstOrDefaultAsync(f => f.Title == newFilm.Title && f.Director == newFilm.Director && f.ReleaseYear == newFilm.ReleaseYear);
 
-            if (existingFilm != null)
+            if (vanemarilyen != null)
             {
                 return BadRequest("Ez a film már létezik.");
             }
@@ -81,7 +81,7 @@ namespace Beadando.Controllers
 
             if (film == null)
             {
-                return NotFound("Film not found.");
+                return NotFound("Nincs ilyen film.");
             }
 
             _context.Films.Remove(film);
@@ -90,28 +90,40 @@ namespace Beadando.Controllers
             return NoContent();
         }
 
-        [HttpPatch("update-release-year/{id}")]
-        public async Task<IActionResult> UpdateReleaseYearById(int id, [FromBody] int releaseYear)
+        [HttpPatch("update-film/{id}")]
+        public async Task<IActionResult> UpdateFilmById(int id, [FromBody] Film updatedFilm)
         {
+            if (updatedFilm == null)
+            {
+                return BadRequest("Adatok hiányoznak.");
+            }
+
             try
             {
                 var film = await _context.Films.FindAsync(id);
 
                 if (film == null)
                 {
-                    return NotFound();
+                    return NotFound("Nincs ilyen film.");
                 }
 
-                film.ReleaseYear = releaseYear;
+                // adatok frissitese
+                film.Title = updatedFilm.Title ?? film.Title; 
+                film.Director = updatedFilm.Director ?? film.Director;
+                film.ReleaseYear = updatedFilm.ReleaseYear > 0 ? updatedFilm.ReleaseYear : film.ReleaseYear; // ertelmes adatot ad e meg
+
+                // beallitasa
+                _context.Entry(film).Property(e => e.Title).IsModified = true;
+                _context.Entry(film).Property(e => e.Director).IsModified = true;
                 _context.Entry(film).Property(e => e.ReleaseYear).IsModified = true;
 
                 await _context.SaveChangesAsync();
 
-                return Ok();
+                return Ok(film);
             }
             catch (Exception ex)
             {
-                // Logolhatod a kivételt
+                // debuggolasra
                 Console.WriteLine($"Error: {ex.Message}");
                 return StatusCode(500, "Szerver hiba történt.");
             }

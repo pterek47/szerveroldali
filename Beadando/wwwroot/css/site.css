@@ -36,7 +36,7 @@ h1 {
         margin: 5px 0;
         color: #555;
     }
-#add-film-modal {
+#add-film {
     position: fixed;
     top: 0;
     left: 0;
@@ -49,20 +49,20 @@ h1 {
     z-index: 1000;
 }
 
-    #add-film-modal form {
+    #add-film form {
         background-color: white;
         padding: 20px;
         border-radius: 8px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
-    #add-film-modal input {
+    #add-film input {
         margin: 10px 0;
         padding: 8px;
         width: 100%;
     }
 
-    #add-film-modal button {
+    #add-film button {
         margin-top: 10px;
     }
     footer{
